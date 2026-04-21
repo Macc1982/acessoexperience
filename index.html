@@ -570,6 +570,24 @@
     footer .logo { font-size: 0.85rem; }
     footer p { font-size: 0.6rem; letter-spacing: 0.2em; color: var(--text-soft); text-transform: uppercase; }
 
+    .instagram-link {
+      color: var(--text-soft);
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+      display: flex;
+      align-items: center;
+    }
+
+    .instagram-link:hover {
+      color: var(--gold);
+      transform: scale(1.12);
+    }
+
+    .instagram-icon {
+      width: 22px;
+      height: 22px;
+    }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -1072,6 +1090,13 @@
 
   <footer>
     <div class="logo">Acesso<span> Experience</span></div>
+    <a class="instagram-link" href="https://www.instagram.com/acesso.experience.ofc?igsh=MTRqOWs0MTB0eW1sMw%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram Acesso Experience">
+      <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="6" ry="6" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+      </svg>
+    </a>
     <p>© 2026 · Todos os direitos reservados</p>
   </footer>
 
