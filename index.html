@@ -607,30 +607,42 @@
       margin: 0 auto;
     }
 
+    .carousel-track-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .carousel-track-sizer {
+      visibility: hidden;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .carousel-track {
       position: relative;
       width: 100%;
     }
 
     .carousel-slide {
-      display: none;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0;
       opacity: 0;
-      transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+      visibility: hidden;
+      transition: opacity 1s ease, visibility 1s ease;
+      pointer-events: none;
     }
 
     .carousel-slide.active {
-      display: flex;
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
-      animation: fadeInSlide 0.9s ease forwards;
-    }
-
-    @keyframes fadeInSlide {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      transition: opacity 1s ease, visibility 0s ease;
     }
 
     .carousel-img-wrap {
@@ -697,7 +709,7 @@
 
     .carousel-arrow {
       position: absolute;
-      top: 38%;
+      top: 40%;
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -943,7 +955,15 @@
   <section class="carousel-section">
     <p class="section-label reveal" style="max-width:1100px;margin:0 auto 48px;padding:0 60px;">Experiências que transformam</p>
     <div class="carousel-container reveal">
-      <div class="carousel-track">
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track-sizer">
+          <div class="carousel-img-wrap" style="width:620px;aspect-ratio:4/5;"></div>
+          <div class="carousel-caption" style="padding:28px 20px 0;">
+            <p class="caption-title" style="font-size:1.75rem;">&nbsp;</p>
+            <p class="caption-sub">&nbsp;</p>
+          </div>
+        </div>
+        <div class="carousel-track" style="position:absolute;inset:0;">
         
         <div class="carousel-slide active">
           <div class="carousel-img-wrap">
@@ -998,6 +1018,7 @@
             <p class="caption-title">Aqui, você não precisa correr.</p>
             <p class="caption-sub">É no intervalo que a consciência se organiza e dialoga.</p>
           </div>
+        </div>
         </div>
       </div>
       <button class="carousel-arrow carousel-prev" onclick="move(-1)">
